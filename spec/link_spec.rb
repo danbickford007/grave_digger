@@ -13,5 +13,13 @@ describe Link do
 
   end
 
+  describe '#url' do
+
+    it 'returns url' do
+      expect(link.url).to eq('http://google.com')
+    end
+
+  end
+
 
 end

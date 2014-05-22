@@ -9,7 +9,7 @@ class Page
 
   def links
     collection = @body.scan(/(<a.*?<\/a>)/)
-    @links ||= collection.map{|x| Link.new(x) }
+    @links ||= collection.map{|x| Link.new(x.first) }
   end
 
   def h1s
