@@ -5,7 +5,7 @@ describe Page do
   let(:link2) { Link.new("<a onclick='click'>clicker</a>") }
   let(:page) { Page.new("<a href='test'>test</a><p>para here</p><h1>here is another test</h1><form action='/test'><input type='text' /></form><a onclick='click'>clicker</a>") }
   let(:form) { Form.new("<form action='/test'><input type='text' /></form>") }
-  describe '#links' do
+  describe '#hyper_links' do
     
     it 'return an array of all anchors' do
       expect(page.links).to eq([page.links.first, page.links.last])

@@ -1,5 +1,8 @@
 class Page
 
+  attr_accessor :request
+  attr_accessor :avail_forms
+
   def initialize(body)
     @body = body
   end
@@ -19,7 +22,7 @@ class Page
 
   def forms
     collection = @body.scan(/(<form.*?<\/form>)/)
-    @forms ||= collection.map{|x| Form.new(x) }
+    @forms ||= collection.map{|x| Form.new(x).request = request }
   end
 
 end

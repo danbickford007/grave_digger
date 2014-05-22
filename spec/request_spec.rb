@@ -6,7 +6,7 @@ describe Request do
   describe 'find' do
     
     it 'should return response string' do
-      expect(request.find).not_to be_nil
+      expect(request.page).not_to be_nil
     end
 
   end
