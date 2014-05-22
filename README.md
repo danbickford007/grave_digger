@@ -1,3 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/danbickford007/grave_digger.png)](http://travis-ci.org/danbickford007/grave_digger?branch=master)
+
+
 # Shovel/Grave Digger
 
   Simple library for automated web browsing and scraping.
