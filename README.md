@@ -22,9 +22,19 @@ Or install it yourself as:
 
     request = Request.new('http://www.google.com')
 
-    request.links
+    request.page.links
 
-    request.links.first.click
+    request.page.links.first.click
+
+    --------------------------------
+
+    request.page.forms.first.submit({name: "test"})
+
+    -------------------------------
+
+    request.page.h1s
+
+    request.page.paragraphs
 
 
 ##  Docs Coming Soon ...
