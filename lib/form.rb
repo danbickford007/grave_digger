@@ -16,11 +16,15 @@ class Form
   end
 
   def submit params={}
-    uri = URI(request.url + get_action_url)
-    res = Net::HTTP.post_form(uri, params)
-    page = Page.new(res.body)
-    page.request = request
-    page
+    begin
+      uri = URI(request.url + get_action_url)
+      res = Net::HTTP.post_form(uri, params)
+      page = Page.new(res.body)
+      page.request = request
+      page
+    rescue => e
+      puts "Error submiting form: #{e}"
+    end
   end
 
 end

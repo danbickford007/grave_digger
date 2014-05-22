@@ -21,8 +21,8 @@ class Page
   end
 
   def forms
-    collection = @body.scan(/(<form.*?<\/form>)/)
-    @forms ||= collection.map{|x| Form.new(x).request = request }
+    collection = @body.scan(/(<form.*?form>)/)
+    @forms ||= collection.each{|x| Form.new(x).request = request }
   end
 
 end

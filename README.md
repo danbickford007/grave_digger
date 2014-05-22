@@ -20,7 +20,7 @@ Or install it yourself as:
     
     require 'shovel'
 
-    request = Request.new('http://gogreenclassifieds.com')
+    request = Request.new('http://www.google.com')
 
     request.links
 
