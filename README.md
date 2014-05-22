@@ -1,6 +1,6 @@
-# Shovel
+# Shovel/Grave Digger
 
-TODO: Write a gem description
+  Simple library for automated web browsing and scraping.
 
 ## Installation
 
@@ -17,8 +17,17 @@ Or install it yourself as:
     $ gem install shovel
 
 ## Usage
+    
+    require 'shovel'
 
-TODO: Write usage instructions here
+    request = Request.new('http://gogreenclassifieds.com')
+
+    request.links
+
+    request.links.first.click
+
+
+##  Docs Coming Soon ...
 
 ## Contributing
 
