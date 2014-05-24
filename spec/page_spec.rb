@@ -3,7 +3,8 @@ describe Page do
 
   let(:link) { Link.new("<a href='test'>test</a>") }
   let(:link2) { Link.new("<a onclick='click'>clicker</a>") }
-  let(:page) { Page.new("<a href='test'>test</a><p>para here</p><h1>here is another test</h1><form action='/test'><input type='text' /></form><a onclick='click'>clicker</a>") }
+  let(:page) { Page.new("<a href='test'>test</a><p>para here</p><h1 id = 'test'>here is another test</h1>
+              <form action='/test'><input type='text' /></form><a onclick='click'>clicker</a>") }
   let(:form) { Form.new("<form action='/test'><input type='text' /></form>") }
   describe '#hyper_links' do
     
@@ -17,7 +18,7 @@ describe Page do
     
     it 'returns array of h1 tags' do
 
-      expect(page.h1s).to eq([["<h1>here is another test</h1>"]])
+      expect(page.h1s).to eq([["<h1 id = 'test'>here is another test</h1>"]])
 
     end
 
@@ -39,6 +40,18 @@ describe Page do
         
       expect(page.forms).to eq([page.forms.first])
         
+    end
+
+  end
+
+  describe '#get_element_by_id' do
+
+    context 'element exists in html' do
+      
+      it 'returns full html element' do
+        expect(page.get_element_by_id('test')).to eq("<h1 id = 'test'>here is another test</h1>")
+      end
+
     end
 
   end
